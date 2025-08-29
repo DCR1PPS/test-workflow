@@ -59,3 +59,9 @@ jobs:
       - name: list dir
         run: ls -a
 
+      - name: Upload to release
+        uses: shogo82148/actions-upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./release
+
